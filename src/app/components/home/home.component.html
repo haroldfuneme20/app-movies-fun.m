@@ -1,0 +1,55 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <h1 class="card-title">APP Peliculas</h1>
+            <h6 class="card-subtitle mb-2 text-muted">Web de Peliculas por HHFM</h6>
+        </div>
+    </div>
+    <div class="mt-5">
+        <h1>Peliculas en Cartelera</h1>
+        <hr>
+        <div class="card-columns">
+            <div *ngFor="let pelicula of peilisCarteleraLimit; let i = index;" class="card">
+                <img src='{{urlImg}}{{pelicula.poster_path}}' class="card-img-top" alt="..." (click)='irPelicula(pelicula.id)'>
+                <div class="card-body">
+                    <h5 class="card-title">{{pelicula.original_title}}</h5>
+                    <!-- <p class="card-title">{{pelicula.overview}}</p> -->
+                    <p class="card-text"><small class="text-muted">Votos: {{pelicula.vote_count}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h1>Peliculas en Populares</h1>
+        <hr>
+        <div class="card-columns">
+            <div *ngFor="let pelicula of peilisPopularesLimit" class="card">
+                <img src='{{urlImg}}{{pelicula.poster_path}}' class="card-img-top" alt="..." (click)='irPelicula(pelicula.id)'>
+                <div class="card-body">
+                    <h5 class="card-title">{{pelicula.original_title}}</h5>
+                    <!-- <p class="card-title">{{pelicula.overview}}</p> -->
+                    <p class="card-text"><small class="text-muted">Votos: {{pelicula.vote_count}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <h1>Peliculas populares entre los pequeños</h1>
+        <hr>
+        <div class="card-columns">
+            <div *ngFor="let pelicula of peilisPopularesNinosLimit" class="card">
+                <img src='{{urlImg}}{{pelicula.poster_path}}' class="card-img-top" alt="..." (click)='irPelicula(pelicula.id)'>
+                <div class="card-body">
+                    <h5 class="card-title">{{pelicula.original_title}}</h5>
+                    <!-- <p class="card-title">{{pelicula.overview}}</p> -->
+                    <p class="card-text"><small class="text-muted">Votos: {{pelicula.vote_count}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

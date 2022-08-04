@@ -1,0 +1,21 @@
+<div class="container">
+    <!-- (ngSubmit)='cargarInbfo($event)' -->
+    <form class="mt-5" [formGroup]=query>
+        <!-- (keyup.enter)='cargarInbfo($event)' -->
+        <label for="search">Buscar:</label>
+        <input class="col-lg-12 m-2" #b formControlName='buscar' name='search' placeholder="Buscar una pelicula" (keyup.enter)='cargarPelis(b.value)'>
+    </form>
+
+    <div class="card-columns">
+        <div class="card" *ngFor="let pelicula of peliculas">
+            <div *ngIf="pelicula.poster_path">
+                <img src={{urlImg}}{{pelicula.poster_path}} class="card-img-top" alt="..." (click)='irPelicula(pelicula.id, b.value) '>
+                <div class="card-body">
+                    <h5 class="card-title">{{pelicula.title}}</h5>
+                    <p class="card-text">{{pelicula.overview}}</p>
+                    <a (click)='irPelicula(pelicula.id, b.value) ' class="col btn btn-primary">ver más...</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

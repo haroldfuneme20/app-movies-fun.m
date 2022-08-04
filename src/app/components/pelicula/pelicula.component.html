@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mt-4 mb-3">
+            <h1>
+                {{pelicula['title']}}
+            </h1>
+        </div>
+        <div class="col-lg-6 m-2">
+
+            <img src="{{urlImg}}{{pelicula['poster_path']}}" alt="">
+        </div>
+        <div class="col-lg-5 ">
+            <h2>Sinopsis</h2>
+            <p>
+                {{pelicula['overview']}}
+            </p>
+            <hr>
+            <h2>Frase celebre</h2>
+            <p>
+                {{pelicula['tagline']}}
+            </p>
+            <h4 class="col-12"> pipularidad Miguelo: <span class="badge badge-primary">{{pelicula['popularity']/100 }} /10</span></h4>
+            <h4 class="col-12">Voto Promedio: <span class="badge badge-primary">{{pelicula['vote_average']}}</span></h4>
+
+            <button type="button" class="btn btn-primary" (click)="regresar()">Regresar</button>
+            
+        </div>
+      </div>
+        <div class="card" style="width: 18rem; margin-left: 8px;">
+          <img src="https://www.lasopa.com/wp-content/uploads/2020/04/miguel-angel-sanchez-venezolano--732x443.jpg" class="card-img-top" alt="...">
+          <div class="card-body" >
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+
+
+    
+</div>
